@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahab Begairat</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .shahab-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Click Below</h1>
+    <button onclick="shahabAction()">Shahab Begairat</button>
+    <div id="container"></div>
+
+    <audio id="laughSound" src="https://www.soundjay.com/human/laughter-male-01.mp3"></audio>
+
+    <script>
+        function shahabAction() {
+            // Add new text
+            let div = document.createElement("div");
+            div.className = "shahab-text";
+            div.innerText = "Shahab begairat sharam kr";
+            document.getElementById("container").appendChild(div);
+
+            // Speak the text
+            let speech = new SpeechSynthesisUtterance("Shahab begairat sharam kr");
+            speech.lang = "ur-PK"; // Urdu pronunciation
+            speechSynthesis.speak(speech);
+
+            // Play laughing sound
+            document.getElementById("laughSound").play();
+        }
+    </script>
+
+</body>
+</html>
